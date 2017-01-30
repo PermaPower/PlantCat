@@ -17,7 +17,16 @@ class ViewController: UIViewController {
         
         // Apply style theme to app
         applyStyle()
+        
+        // Setup Navigation Bar
+        navBarSetup()
     }
+    
+    func navBarSetup() {
+        navigationItem.title = "Home"
+       // style.apply(textStyle: style.font(for: .myAppTitle), to: UINavigationBar)
+    }
+    
     
     func applyStyle() {
         view.backgroundColor = style.backgroundColor

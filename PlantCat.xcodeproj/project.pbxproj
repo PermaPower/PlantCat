@@ -14,6 +14,7 @@
 		639724F71E3EF92200E3594D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 639724F51E3EF92200E3594D /* LaunchScreen.storyboard */; };
 		639724FF1E3EFA7D00E3594D /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639724FE1E3EFA7D00E3594D /* Style.swift */; };
 		639725011E3EFAAE00E3594D /* Style+MyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639725001E3EFAAE00E3594D /* Style+MyApp.swift */; };
+		639725031E3F06F300E3594D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639725021E3F06F300E3594D /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		639724F81E3EF92200E3594D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		639724FE1E3EFA7D00E3594D /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		639725001E3EFAAE00E3594D /* Style+MyApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Style+MyApp.swift"; path = "../Style+MyApp.swift"; sourceTree = "<group>"; };
+		639725021E3F06F300E3594D /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				639724F31E3EF92200E3594D /* Assets.xcassets */,
 				639724F51E3EF92200E3594D /* LaunchScreen.storyboard */,
 				639724F81E3EF92200E3594D /* Info.plist */,
+				639725021E3F06F300E3594D /* Extensions.swift */,
 			);
 			path = PlantCatalogue;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				639725031E3F06F300E3594D /* Extensions.swift in Sources */,
 				639724EF1E3EF92200E3594D /* ViewController.swift in Sources */,
 				639724FF1E3EFA7D00E3594D /* Style.swift in Sources */,
 				639724ED1E3EF92200E3594D /* AppDelegate.swift in Sources */,
