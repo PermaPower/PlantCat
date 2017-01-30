@@ -24,7 +24,6 @@ class ViewController: UIViewController {
     
     func navBarSetup() {
         navigationItem.title = "Home"
-       // style.apply(textStyle: style.font(for: .myAppTitle), to: UINavigationBar)
     }
     
     
