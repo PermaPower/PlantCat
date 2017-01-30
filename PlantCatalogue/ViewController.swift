@@ -10,9 +10,21 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let style = Style.myApp
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        // Apply style theme to app
+        applyStyle()
+    }
+    
+    func applyStyle() {
+        view.backgroundColor = style.backgroundColor
+        
+        if let navBar = navigationController?.navigationBar {
+            style.apply(to: navBar)
+        }
     }
 
     override func didReceiveMemoryWarning() {

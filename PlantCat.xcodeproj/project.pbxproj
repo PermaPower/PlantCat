@@ -12,16 +12,20 @@
 		639724F21E3EF92200E3594D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 639724F01E3EF92200E3594D /* Main.storyboard */; };
 		639724F41E3EF92200E3594D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 639724F31E3EF92200E3594D /* Assets.xcassets */; };
 		639724F71E3EF92200E3594D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 639724F51E3EF92200E3594D /* LaunchScreen.storyboard */; };
+		639724FF1E3EFA7D00E3594D /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639724FE1E3EFA7D00E3594D /* Style.swift */; };
+		639725011E3EFAAE00E3594D /* Style+MyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639725001E3EFAAE00E3594D /* Style+MyApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		639724E91E3EF92200E3594D /* PlantCatalogue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlantCatalogue.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		639724E91E3EF92200E3594D /* PlantCat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlantCat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		639724EC1E3EF92200E3594D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		639724EE1E3EF92200E3594D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		639724F11E3EF92200E3594D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		639724F31E3EF92200E3594D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		639724F61E3EF92200E3594D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		639724F81E3EF92200E3594D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		639724FE1E3EFA7D00E3594D /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		639725001E3EFAAE00E3594D /* Style+MyApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Style+MyApp.swift"; path = "../Style+MyApp.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +50,7 @@
 		639724EA1E3EF92200E3594D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				639724E91E3EF92200E3594D /* PlantCatalogue.app */,
+				639724E91E3EF92200E3594D /* PlantCat.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,6 +60,8 @@
 			children = (
 				639724EC1E3EF92200E3594D /* AppDelegate.swift */,
 				639724EE1E3EF92200E3594D /* ViewController.swift */,
+				639724FE1E3EFA7D00E3594D /* Style.swift */,
+				639725001E3EFAAE00E3594D /* Style+MyApp.swift */,
 				639724F01E3EF92200E3594D /* Main.storyboard */,
 				639724F31E3EF92200E3594D /* Assets.xcassets */,
 				639724F51E3EF92200E3594D /* LaunchScreen.storyboard */,
@@ -67,9 +73,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		639724E81E3EF92200E3594D /* PlantCatalogue */ = {
+		639724E81E3EF92200E3594D /* PlantCat */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 639724FB1E3EF92200E3594D /* Build configuration list for PBXNativeTarget "PlantCatalogue" */;
+			buildConfigurationList = 639724FB1E3EF92200E3594D /* Build configuration list for PBXNativeTarget "PlantCat" */;
 			buildPhases = (
 				639724E51E3EF92200E3594D /* Sources */,
 				639724E61E3EF92200E3594D /* Frameworks */,
@@ -79,9 +85,9 @@
 			);
 			dependencies = (
 			);
-			name = PlantCatalogue;
+			name = PlantCat;
 			productName = PlantCatalogue;
-			productReference = 639724E91E3EF92200E3594D /* PlantCatalogue.app */;
+			productReference = 639724E91E3EF92200E3594D /* PlantCat.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -100,7 +106,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 639724E41E3EF92200E3594D /* Build configuration list for PBXProject "PlantCatalogue" */;
+			buildConfigurationList = 639724E41E3EF92200E3594D /* Build configuration list for PBXProject "PlantCat" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -113,7 +119,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				639724E81E3EF92200E3594D /* PlantCatalogue */,
+				639724E81E3EF92200E3594D /* PlantCat */,
 			);
 		};
 /* End PBXProject section */
@@ -137,7 +143,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				639724EF1E3EF92200E3594D /* ViewController.swift in Sources */,
+				639724FF1E3EFA7D00E3594D /* Style.swift in Sources */,
 				639724ED1E3EF92200E3594D /* AppDelegate.swift in Sources */,
+				639725011E3EFAAE00E3594D /* Style+MyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,7 +270,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PlantCatalogue/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.PermaculturePower.PlantCatalogue;
+				PRODUCT_BUNDLE_IDENTIFIER = com.PermaculturePower.PlantCat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -274,7 +282,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PlantCatalogue/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.PermaculturePower.PlantCatalogue;
+				PRODUCT_BUNDLE_IDENTIFIER = com.PermaculturePower.PlantCat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -283,7 +291,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		639724E41E3EF92200E3594D /* Build configuration list for PBXProject "PlantCatalogue" */ = {
+		639724E41E3EF92200E3594D /* Build configuration list for PBXProject "PlantCat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				639724F91E3EF92200E3594D /* Debug */,
@@ -292,7 +300,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		639724FB1E3EF92200E3594D /* Build configuration list for PBXNativeTarget "PlantCatalogue" */ = {
+		639724FB1E3EF92200E3594D /* Build configuration list for PBXNativeTarget "PlantCat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				639724FC1E3EF92200E3594D /* Debug */,

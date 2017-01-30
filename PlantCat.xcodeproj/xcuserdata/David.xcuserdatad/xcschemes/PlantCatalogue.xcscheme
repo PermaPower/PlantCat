@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "639724E81E3EF92200E3594D"
-               BuildableName = "PlantCatalogue.app"
-               BlueprintName = "PlantCatalogue"
-               ReferencedContainer = "container:PlantCatalogue.xcodeproj">
+               BuildableName = "PlantCat.app"
+               BlueprintName = "PlantCat"
+               ReferencedContainer = "container:PlantCat.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "639724E81E3EF92200E3594D"
-            BuildableName = "PlantCatalogue.app"
-            BlueprintName = "PlantCatalogue"
-            ReferencedContainer = "container:PlantCatalogue.xcodeproj">
+            BuildableName = "PlantCat.app"
+            BlueprintName = "PlantCat"
+            ReferencedContainer = "container:PlantCat.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "639724E81E3EF92200E3594D"
-            BuildableName = "PlantCatalogue.app"
-            BlueprintName = "PlantCatalogue"
-            ReferencedContainer = "container:PlantCatalogue.xcodeproj">
+            BuildableName = "PlantCat.app"
+            BlueprintName = "PlantCat"
+            ReferencedContainer = "container:PlantCat.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "639724E81E3EF92200E3594D"
-            BuildableName = "PlantCatalogue.app"
-            BlueprintName = "PlantCatalogue"
-            ReferencedContainer = "container:PlantCatalogue.xcodeproj">
+            BuildableName = "PlantCat.app"
+            BlueprintName = "PlantCat"
+            ReferencedContainer = "container:PlantCat.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
