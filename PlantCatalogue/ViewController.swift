@@ -20,6 +20,9 @@ class ViewController: UIViewController {
         
         // Setup Navigation Bar
         navBarSetup()
+        
+        // Setup Background SmokeBackground Image
+        settingUpBackgroundImage()
     }
     
     func navBarSetup() {
@@ -28,13 +31,20 @@ class ViewController: UIViewController {
     
     
     func applyStyle() {
-        view.backgroundColor = style.backgroundColor
-        
         if let navBar = navigationController?.navigationBar {
             style.apply(to: navBar)
         }
     }
 
+    func settingUpBackgroundImage() {
+        // Setting up backgroundImage
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image = UIImage(named: "smokebackground")
+        backgroundImage.contentMode = UIViewContentMode.scaleAspectFill
+        backgroundImage.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.view.insertSubview(backgroundImage, at: 0)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
