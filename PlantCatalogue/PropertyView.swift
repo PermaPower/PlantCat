@@ -51,7 +51,7 @@ class PropertyViewController: UICollectionViewController, UICollectionViewDelega
         self.view.addSubview(backgroundImage)
         
         // Register collectionview cell
-        collectionView?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellId")
+        collectionView?.register(PlantInformationCellView.self, forCellWithReuseIdentifier: "cellId")
     }
     
     // Setup collectionViewCell row number
@@ -64,8 +64,12 @@ class PropertyViewController: UICollectionViewController, UICollectionViewDelega
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath)
         
-        cell.backgroundColor = UIColor.red
         return cell
+    }
+    
+    // Setup miniumline spacing for each cell
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
     }
     
     // Setup collectionViewCell size
