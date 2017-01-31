@@ -36,18 +36,16 @@ class PlantInformationCellView: UICollectionViewCell {
     }()
     
     func setupViews() {
-        //backgroundColor = UIColor.red
+        
         addSubview(thumbnailImageView)
         addSubview(seperatorLine)
         
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-16-[v0]-16-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": thumbnailImageView]))
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[v0(100)]", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": thumbnailImageView]))
+        addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: thumbnailImageView)
+        addConstraintsWithFormat(format: "V:|[v0(100)]", views: thumbnailImageView)
         
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": seperatorLine]))
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[v0(1)]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": seperatorLine]))
-    
+        addConstraintsWithFormat(format: "H:|[v0]|", views: seperatorLine)
+        addConstraintsWithFormat(format: "V:[v0(1)]|", views: seperatorLine)
     }
-    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
