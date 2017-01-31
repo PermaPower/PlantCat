@@ -11,7 +11,7 @@ import UIKit
 extension Style {
     static var myApp: Style {
         return Style(
-            backgroundColor: .myAppGreen,
+            backgroundColor: .myAppWhite,
             preferredStatusBarStyle: .lightContent,
             attributesForStyle: { $0.myAppAttributes }
         )
@@ -28,7 +28,7 @@ private extension Style.TextStyle {
         case .subtitle:
             return Style.TextAttributes(font: .myAppSubtitle, color: .myAppBlue)
         case .body:
-            return Style.TextAttributes(font: .myAppBody, color: .black, backgroundColor: .myAppGreen)
+            return Style.TextAttributes(font: .myAppBody, color: .black, backgroundColor: .myAppWhite)
         case .button:
             return Style.TextAttributes(font: .myAppSubtitle, color: .white, backgroundColor: .myAppRed)
         }
@@ -40,10 +40,10 @@ extension UIColor {
         return UIColor(hexString: "FA3D3D").withAlphaComponent(1)
     }
     static var myAppGreen: UIColor {
-        return UIColor(hexString: "#009688").withAlphaComponent(1)
+        return UIColor(hexString: "#4bc1d2").withAlphaComponent(1)
     }
     static var myAppGreenStatusBar: UIColor {
-        return UIColor(hexString: "#00796B").withAlphaComponent(1)
+        return UIColor(hexString: "#4bc1d2").withAlphaComponent(1)
     }
     static var myAppWhite: UIColor {
         return UIColor(hexString: "#FFFFFF").withAlphaComponent(1)

@@ -21,8 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
+        // CollectionView layout
+        let layout = UICollectionViewFlowLayout()
+        
         // Create a new UINavigationController
-        window?.rootViewController = UINavigationController(rootViewController: ViewController())
+        window?.rootViewController =
+            UINavigationController(rootViewController: PropertyViewController(collectionViewLayout: layout))
         
         return true
     }
