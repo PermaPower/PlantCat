@@ -40,16 +40,9 @@ class PropertyViewController: UICollectionViewController, UICollectionViewDelega
     func collectionViewSetup() {
         
         // Start with a white background
-        collectionView?.backgroundColor = UIColor.white
-        
-        // Overlay up backgroundImage
-        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "smokebackground")
-        backgroundImage.alpha = 0.2
-        backgroundImage.contentMode = UIViewContentMode.scaleAspectFill
-        backgroundImage.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        self.view.addSubview(backgroundImage)
-        
+        view.backgroundColor = UIColor.white
+        collectionView?.backgroundColor = UIColor(patternImage: UIImage(named: "smokebackground")!).withAlphaComponent(0.2)
+                
         // Register collectionview cell
         collectionView?.register(PlantInformationCellView.self, forCellWithReuseIdentifier: "cellId")
     }
@@ -64,6 +57,10 @@ class PropertyViewController: UICollectionViewController, UICollectionViewDelega
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath)
         
+        // Set the background color of selected cell in the collectionView
+        // cell.selectedBackgroundView = UIView(frame: cell.bounds)
+        // cell.selectedBackgroundView!.backgroundColor = .black
+        
         return cell
     }
     
@@ -76,7 +73,7 @@ class PropertyViewController: UICollectionViewController, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.bounds.width, height: 200)
     }
-    
+
     
     // Resize collectionViewCells upon rotation
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {

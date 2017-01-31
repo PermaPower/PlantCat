@@ -22,7 +22,7 @@ class PlantInformationCellView: UICollectionViewCell {
     // ThumbnailImageView
     let thumbnailImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = UIColor.blue
+        imageView.backgroundColor = UIColor.myAppWhite
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
