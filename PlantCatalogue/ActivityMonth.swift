@@ -48,6 +48,7 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
         cv.delegate = self
         cv.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellID")
         cv.translatesAutoresizingMaskIntoConstraints = false
+        
         return cv
     }()
     
@@ -62,6 +63,16 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
         
         cell.backgroundColor = UIColor.blue
         
+        let title = UILabel(frame: CGRect(x: 0, y: 10, width: cell.frame.width, height: 20))
+        title.text = "Hello"
+        title.translatesAutoresizingMaskIntoConstraints = false
+        title.adjustsFontSizeToFitWidth = true
+        title.textAlignment = .center
+        title.numberOfLines = 1
+        title.textColor = UIColor.myAppWhite
+        
+        cell.contentView.addSubview(title)
+            
         return cell
     }
     
@@ -100,7 +111,7 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
     // Reloads CollectionView upon Rotation
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
-        calendarCollectionView.reloadData()
+        calendarCollectionView.collectionViewLayout.invalidateLayout()
     }
     
     // Resize collectionViewCells upon rotation
