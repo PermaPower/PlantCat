@@ -45,6 +45,7 @@ class PropertyViewController: UICollectionViewController, UICollectionViewDelega
     let smokeImageView: UIImageView = {
         let smokeImage = UIImageView(frame: CGRect.zero)
         smokeImage.image = UIImage(named: "smokebackground")
+        smokeImage.layer.masksToBounds = true
         smokeImage.contentMode = .scaleAspectFill
         smokeImage.alpha = 0.2
         smokeImage.translatesAutoresizingMaskIntoConstraints = false

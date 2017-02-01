@@ -19,12 +19,11 @@ class PlantInformationCellView: UICollectionViewCell {
         setupViews()
     }
     
-    // ThumbnailImageView
-    let thumbnailImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.backgroundColor = UIColor.myAppWhite
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
+    // ActivityMonth View
+    let activityMonthView: ActivityMonth = {
+        let amView = ActivityMonth()
+        amView.translatesAutoresizingMaskIntoConstraints = false
+        return amView
     }()
     
     // Seperator line
@@ -35,13 +34,13 @@ class PlantInformationCellView: UICollectionViewCell {
         return seperatorView
     }()
     
-    func setupViews() {
+    private func setupViews() {
         
-        addSubview(thumbnailImageView)
+        addSubview(activityMonthView)
         addSubview(seperatorLine)
         
-        addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: thumbnailImageView)
-        addConstraintsWithFormat(format: "V:|[v0(100)]", views: thumbnailImageView)
+        addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: activityMonthView)
+        addConstraintsWithFormat(format: "V:|[v0(100)]", views: activityMonthView)
         
         addConstraintsWithFormat(format: "H:|[v0]|", views: seperatorLine)
         addConstraintsWithFormat(format: "V:[v0(1)]|", views: seperatorLine)

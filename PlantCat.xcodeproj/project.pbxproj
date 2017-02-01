@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		630D71921E4033CA00555EC8 /* PlantInformationCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630D71911E4033CA00555EC8 /* PlantInformationCellView.swift */; };
+		630F726F1E41907800ADE9EA /* ActivityMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630F726E1E41907800ADE9EA /* ActivityMonth.swift */; };
 		639724ED1E3EF92200E3594D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639724EC1E3EF92200E3594D /* AppDelegate.swift */; };
 		639724EF1E3EF92200E3594D /* PropertyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639724EE1E3EF92200E3594D /* PropertyView.swift */; };
 		639724F21E3EF92200E3594D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 639724F01E3EF92200E3594D /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		630D71911E4033CA00555EC8 /* PlantInformationCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantInformationCellView.swift; sourceTree = "<group>"; };
+		630F726E1E41907800ADE9EA /* ActivityMonth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityMonth.swift; sourceTree = "<group>"; };
 		639724E91E3EF92200E3594D /* PlantCat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlantCat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		639724EC1E3EF92200E3594D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		639724EE1E3EF92200E3594D /* PropertyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyView.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			children = (
 				639724EE1E3EF92200E3594D /* PropertyView.swift */,
 				630D71911E4033CA00555EC8 /* PlantInformationCellView.swift */,
+				630F726E1E41907800ADE9EA /* ActivityMonth.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				630F726F1E41907800ADE9EA /* ActivityMonth.swift in Sources */,
 				639725031E3F06F300E3594D /* Extensions.swift in Sources */,
 				639724EF1E3EF92200E3594D /* PropertyView.swift in Sources */,
 				639724FF1E3EFA7D00E3594D /* Style.swift in Sources */,
