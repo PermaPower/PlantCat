@@ -52,7 +52,12 @@ class PropertyViewController: UICollectionViewController, UICollectionViewDelega
     }()
     
     func addSmokeImageView() {
-        smokeImageView.removeFromSuperview()
+        
+        // Remove the smokeImageView first if it exists
+        if smokeImageView.isDescendant(of: view) {
+            self.smokeImageView.removeFromSuperview()
+        }
+        
         view.insertSubview(smokeImageView, at: 0)
         
         view.addConstraintsWithFormat(format: "H:|[v0]|", views: smokeImageView)
