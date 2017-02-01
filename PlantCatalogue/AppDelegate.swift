@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Create a new UINavigationController
         window?.rootViewController =
             UINavigationController(rootViewController: PropertyViewController(collectionViewLayout: layout))
-        
+               
         return true
     }
 

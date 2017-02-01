@@ -11,9 +11,12 @@ import UIKit
 class PropertyViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     let style = Style.myApp
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Add smokeimage
+        addSmokeImageView()
         
         // Apply style theme to app
         applyStyle()
@@ -32,17 +35,38 @@ class PropertyViewController: UICollectionViewController, UICollectionViewDelega
     func applyStyle() {
         
         view.backgroundColor = style.backgroundColor
+        
         if let navBar = navigationController?.navigationBar {
             style.apply(to: navBar)
         }
     }
     
+    // SmokeBackground imageView
+    let smokeImageView: UIImageView = {
+        let smokeImage = UIImageView(frame: CGRect.zero)
+        smokeImage.image = UIImage(named: "smokebackground")
+        smokeImage.contentMode = .scaleAspectFill
+        smokeImage.alpha = 0.2
+        smokeImage.translatesAutoresizingMaskIntoConstraints = false
+        return smokeImage
+    }()
+    
+    func addSmokeImageView() {
+        smokeImageView.removeFromSuperview()
+        view.insertSubview(smokeImageView, at: 0)
+        
+        view.addConstraintsWithFormat(format: "H:|[v0]|", views: smokeImageView)
+        view.addConstraintsWithFormat(format: "V:|[v0]|", views: smokeImageView)
+    }
+
     func collectionViewSetup() {
         
         // Start with a white background
         view.backgroundColor = UIColor.white
-        collectionView?.backgroundColor = UIColor(patternImage: UIImage(named: "smokebackground")!).withAlphaComponent(0.2)
-                
+        
+        // Now set the colletionView to a clearview
+        collectionView?.backgroundColor = UIColor.clear
+        
         // Register collectionview cell
         collectionView?.register(PlantInformationCellView.self, forCellWithReuseIdentifier: "cellId")
     }
@@ -84,6 +108,15 @@ class PropertyViewController: UICollectionViewController, UICollectionViewDelega
     private func updateCollectionViewLayout(with size: CGSize) {
         if let layout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.invalidateLayout()
+        }
+    }
+
+    // Update background Image upon rotation
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        if UIDevice.current.orientation.isLandscape {
+            addSmokeImageView()
+        } else {
+            addSmokeImageView()
         }
     }
     
