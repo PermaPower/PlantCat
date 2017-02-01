@@ -51,10 +51,12 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
         return cv
     }()
     
+    // Return 12 cells
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 12
     }
     
+    // Register cellID
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath)
         
@@ -70,8 +72,9 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
         let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
         let availableWidth = frame.width  - paddingSpace
         let widthPerItem = availableWidth / itemsPerRow
-        return CGSize(width: widthPerItem, height: (bounds.height / 2) - 10 )
+        return CGSize(width: widthPerItem, height: (frame.height / 2) - 10 )
     }
+    
     
     // Reduce minimum line spacing between collectionview cells to zero
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -82,6 +85,7 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
     }
     
     private func setupViews() {
+        
         addSubview(activityMonthIcon)
         addSubview(calendarCollectionView)
         
@@ -91,6 +95,22 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
         addConstraintsWithFormat(format: "H:|-37-[v0]-|", views: calendarCollectionView)
         addConstraintsWithFormat(format: "V:|-[v0]-|", views: calendarCollectionView)
         
+    }
+    
+    // Reloads CollectionView upon Rotation
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        calendarCollectionView.reloadData()
+    }
+    
+    // Resize collectionViewCells upon rotation
+    func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        viewWillTransition(to: size, with: coordinator)
+        updateCollectionViewLayout(with: size)
+    }
+    
+    private func updateCollectionViewLayout(with size: CGSize) {
+        self.calendarCollectionView.invalidateIntrinsicContentSize()
     }
     
     required init?(coder aDecoder: NSCoder) {
