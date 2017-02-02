@@ -22,7 +22,7 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = UIColor.myAppWhite
+        // backgroundColor = UIColor.myAppWhite
         
         // Setup SubViews for ActivtyMonth
         setupViews()
@@ -48,19 +48,15 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
     lazy var calendarCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        //cv.backgroundColor = UIColor.clear
-        cv.backgroundColor = UIColor.red
+        cv.backgroundColor = UIColor.clear
         cv.dataSource = self
         cv.delegate = self
         cv.register(CalendarMonthButton.self, forCellWithReuseIdentifier: "cellID")
         cv.allowsMultipleSelection = true
         cv.translatesAutoresizingMaskIntoConstraints = false
-        
         return cv
     }()
-    
-    
-    
+
     // Return 12 cells
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 12
@@ -70,7 +66,7 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath) as! CalendarMonthButton
        
-        cell.backgroundColor = UIColor.blue
+        //cell.backgroundColor = UIColor.blue
         
         cell.calButton.text = months[indexPath.item]
         
@@ -86,7 +82,6 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
         let widthPerItem = availableWidth / itemsPerRow
         return CGSize(width: widthPerItem, height: (frame.height / 2) - 10 )
     }
-    
     
     // Reduce minimum line spacing between collectionview cells to zero
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -104,7 +99,7 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
         addConstraintsWithFormat(format: "H:|[v0(30)]", views: activityMonthIcon)
         addConstraintsWithFormat(format: "V:|-35-[v0(30)]", views: activityMonthIcon)
         
-        addConstraintsWithFormat(format: "H:|-37-[v0]-|", views: calendarCollectionView)
+        addConstraintsWithFormat(format: "H:|-47-[v0]-|", views: calendarCollectionView)
         addConstraintsWithFormat(format: "V:|-[v0]-|", views: calendarCollectionView)
         
     }
@@ -165,8 +160,9 @@ class CalendarMonthButton: UICollectionViewCell {
         cb.adjustsFontSizeToFitWidth = true
         cb.textAlignment = .center
         cb.numberOfLines = 1
-        cb.textColor = UIColor.myAppWhite
-        
+        cb.textColor = UIColor.myAppGreen
+        cb.layer.cornerRadius = 10
+        cb.layer.masksToBounds = true
         return cb
         
     }()
@@ -185,13 +181,13 @@ class CalendarMonthButton: UICollectionViewCell {
     
     override var isSelected: Bool {
         didSet {
-            calButton.backgroundColor = isSelected ? UIColor.myAppBlue: UIColor.clear
+            calButton.backgroundColor = isSelected ? UIColor.myAppWhite: UIColor.clear
         }
     }
     
     override var isMultipleTouchEnabled: Bool {
         didSet {
-            calButton.backgroundColor = isMultipleTouchEnabled ? UIColor.myAppBlue: UIColor.clear
+            calButton.backgroundColor = isMultipleTouchEnabled ? UIColor.myAppWhite: UIColor.clear
         }
     }
     
