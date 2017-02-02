@@ -29,7 +29,7 @@ class PropertyViewController: UICollectionViewController, UICollectionViewDelega
     }
     
     func navBarSetup() {
-        navigationItem.title = "Home"
+        navigationItem.title = "Home"        
     }
     
     func applyStyle() {

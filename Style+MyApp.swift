@@ -51,6 +51,9 @@ extension UIColor {
     static var myAppBlue: UIColor {
         return UIColor(hexString: "#3D3DFA").withAlphaComponent(1)
     }
+    static var myAppGrey: UIColor {
+        return UIColor(hexString: "#A0A4A6").withAlphaComponent(1)
+    }
     static var myAppSeperator: UIColor {
         return UIColor(hexString: "#4bc1d2").withAlphaComponent(1)
     }

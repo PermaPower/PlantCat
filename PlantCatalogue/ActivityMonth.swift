@@ -54,6 +54,8 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
         cv.register(CalendarMonthButton.self, forCellWithReuseIdentifier: "cellID")
         cv.allowsMultipleSelection = true
         cv.translatesAutoresizingMaskIntoConstraints = false
+        cv.isScrollEnabled = false
+
         return cv
     }()
 
@@ -151,9 +153,8 @@ class CalendarMonthButton: UICollectionViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+       
     let calButton: UILabel = {
-        
       
         let cb = UILabel()
         cb.translatesAutoresizingMaskIntoConstraints = false
@@ -169,25 +170,33 @@ class CalendarMonthButton: UICollectionViewCell {
     
     private func setupViews(){
         addSubview(calButton)
+        
         addConstraintsWithFormat(format: "H:|[v0]|", views: calButton)
-        addConstraintsWithFormat(format: "V:|[v0]|", views: calButton)
+        addConstraintsWithFormat(format: "V:|-1-[v0]-1-|", views: calButton)
     }
     
     override var isHighlighted: Bool {
         didSet {
-            calButton.backgroundColor = isHighlighted ? UIColor.myAppWhite: UIColor.clear
+            //calButton.backgroundColor = isHighlighted ? UIColor.myAppWhite: UIColor.clear
+            calButton.layer.borderWidth = 1
+            calButton.layer.borderColor = UIColor.myAppGreen.cgColor
+            
         }
     }
     
     override var isSelected: Bool {
         didSet {
-            calButton.backgroundColor = isSelected ? UIColor.myAppWhite: UIColor.clear
+           // calButton.backgroundColor = isSelected ? UIColor.myAppWhite: UIColor.clear
+            calButton.layer.borderWidth = 1
+            calButton.layer.borderColor = UIColor.myAppGreen.cgColor
         }
     }
     
     override var isMultipleTouchEnabled: Bool {
         didSet {
-            calButton.backgroundColor = isMultipleTouchEnabled ? UIColor.myAppWhite: UIColor.clear
+           // calButton.backgroundColor = isMultipleTouchEnabled ? UIColor.myAppWhite: UIColor.clear
+            calButton.layer.borderWidth = 1
+            calButton.layer.borderColor = UIColor.myAppGreen.cgColor
         }
     }
     
