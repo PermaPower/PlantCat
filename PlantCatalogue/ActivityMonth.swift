@@ -19,8 +19,6 @@ import UIKit
 
 class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -30,6 +28,12 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
         setupViews()
         
     }
+    
+    // Month names
+    let months: [String] = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+    
+    // Setup blank dictionary with a capacity of 0-11 (1-12 months) to track button presses
+    var calButtonTrack = [Int:Bool](minimumCapacity: 11)
     
     // Activity Month Icon
     let activityMonthIcon: UIImageView = {
@@ -67,6 +71,8 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath) as! CalendarMonthButton
        
         cell.backgroundColor = UIColor.blue
+        
+        cell.calButton.text = months[indexPath.item]
         
         return cell
     }
@@ -123,6 +129,19 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
         fatalError("init(coder:) has not been implemented")
     }
     
+    // detect what collectionview was selected
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        calButtonTrack.updateValue(true, forKey: indexPath.row)
+        print (calButtonTrack)
+    }
+    
+    // detect what collectionview was selected
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        calButtonTrack.updateValue(false, forKey: indexPath.row)
+        print (calButtonTrack)
+    }
+    
+    
 }
 
 class CalendarMonthButton: UICollectionViewCell {
@@ -130,9 +149,9 @@ class CalendarMonthButton: UICollectionViewCell {
     override init(frame: CGRect) {
         // When dequeueReusableCell is called this init method is called if it needs a new cell
         super.init(frame: frame)
+        
         setupViews()
     }
-    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -140,6 +159,7 @@ class CalendarMonthButton: UICollectionViewCell {
     
     let calButton: UILabel = {
         
+      
         let cb = UILabel()
         cb.translatesAutoresizingMaskIntoConstraints = false
         cb.adjustsFontSizeToFitWidth = true
@@ -147,17 +167,32 @@ class CalendarMonthButton: UICollectionViewCell {
         cb.numberOfLines = 1
         cb.textColor = UIColor.myAppWhite
         
-        cb.text = "Hello"
-        
         return cb
         
     }()
-    
     
     private func setupViews(){
         addSubview(calButton)
         addConstraintsWithFormat(format: "H:|[v0]|", views: calButton)
         addConstraintsWithFormat(format: "V:|[v0]|", views: calButton)
+    }
+    
+    override var isHighlighted: Bool {
+        didSet {
+            calButton.backgroundColor = isHighlighted ? UIColor.myAppWhite: UIColor.clear
+        }
+    }
+    
+    override var isSelected: Bool {
+        didSet {
+            calButton.backgroundColor = isSelected ? UIColor.myAppBlue: UIColor.clear
+        }
+    }
+    
+    override var isMultipleTouchEnabled: Bool {
+        didSet {
+            calButton.backgroundColor = isMultipleTouchEnabled ? UIColor.myAppBlue: UIColor.clear
+        }
     }
     
 }
