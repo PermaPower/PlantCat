@@ -19,6 +19,8 @@ import UIKit
 
 class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -46,33 +48,26 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
         cv.backgroundColor = UIColor.red
         cv.dataSource = self
         cv.delegate = self
-        cv.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellID")
+        cv.register(CalendarMonthButton.self, forCellWithReuseIdentifier: "cellID")
+        cv.allowsMultipleSelection = true
         cv.translatesAutoresizingMaskIntoConstraints = false
         
         return cv
     }()
+    
+    
     
     // Return 12 cells
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 12
     }
     
-    // Register cellID
+    // Register collectionview cell
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath)
-        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath) as! CalendarMonthButton
+       
         cell.backgroundColor = UIColor.blue
         
-        let title = UILabel(frame: CGRect(x: 0, y: 10, width: cell.frame.width, height: 20))
-        title.text = "Hello"
-        title.translatesAutoresizingMaskIntoConstraints = false
-        title.adjustsFontSizeToFitWidth = true
-        title.textAlignment = .center
-        title.numberOfLines = 1
-        title.textColor = UIColor.myAppWhite
-        
-        cell.contentView.addSubview(title)
-            
         return cell
     }
     
@@ -127,4 +122,42 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+}
+
+class CalendarMonthButton: UICollectionViewCell {
+    
+    override init(frame: CGRect) {
+        // When dequeueReusableCell is called this init method is called if it needs a new cell
+        super.init(frame: frame)
+        setupViews()
+    }
+    
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    let calButton: UILabel = {
+        
+        let cb = UILabel()
+        cb.translatesAutoresizingMaskIntoConstraints = false
+        cb.adjustsFontSizeToFitWidth = true
+        cb.textAlignment = .center
+        cb.numberOfLines = 1
+        cb.textColor = UIColor.myAppWhite
+        
+        cb.text = "Hello"
+        
+        return cb
+        
+    }()
+    
+    
+    private func setupViews(){
+        addSubview(calButton)
+        addConstraintsWithFormat(format: "H:|[v0]|", views: calButton)
+        addConstraintsWithFormat(format: "V:|[v0]|", views: calButton)
+    }
+    
 }
