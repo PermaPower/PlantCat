@@ -114,6 +114,7 @@ class PropertyViewController: UICollectionViewController, UICollectionViewDelega
     private func updateCollectionViewLayout(with size: CGSize) {
         if let layout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.invalidateLayout()
+
         }
     }
 
@@ -124,6 +125,10 @@ class PropertyViewController: UICollectionViewController, UICollectionViewDelega
         } else {
             addSmokeImageView()
         }
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        self.collectionView?.invalidateIntrinsicContentSize()
     }
     
     // Handle errors
