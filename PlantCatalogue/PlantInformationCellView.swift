@@ -24,6 +24,7 @@ class PlantInformationCellView: UICollectionViewCell {
         let at = UIView()
         at.backgroundColor = UIColor.myAppWhite
         at.translatesAutoresizingMaskIntoConstraints = false
+        at.backgroundColor = UIColor.myAppGreen.withAlphaComponent(0.2)
         
         let title = UILabel(frame: CGRect(x: 0, y: 0, width: at.bounds.width, height: at.bounds.height))
         title.text = "Activity Month"
@@ -32,7 +33,6 @@ class PlantInformationCellView: UICollectionViewCell {
         title.translatesAutoresizingMaskIntoConstraints = false
         
         at.addSubview(title)
-        
         at.addConstraintsWithFormat(format: "H:|-16-[v0]", views: title)
         
         return at

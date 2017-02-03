@@ -163,6 +163,8 @@ class CalendarMonthButton: UICollectionViewCell {
         cb.numberOfLines = 1
         cb.textColor = UIColor.myAppGreen
         cb.layer.cornerRadius = 10
+        cb.layer.borderWidth = 1
+        cb.layer.borderColor = UIColor.myAppWhite.cgColor
         cb.layer.masksToBounds = true
         return cb
         
@@ -177,27 +179,19 @@ class CalendarMonthButton: UICollectionViewCell {
     
     override var isHighlighted: Bool {
         didSet {
-            //calButton.backgroundColor = isHighlighted ? UIColor.myAppWhite: UIColor.clear
-            calButton.layer.borderWidth = 1
-            calButton.layer.borderColor = UIColor.myAppGreen.cgColor
-            
+            calButton.layer.borderColor = isHighlighted ? UIColor.myAppGreen.cgColor : UIColor.clear.cgColor
         }
     }
     
     override var isSelected: Bool {
         didSet {
-           // calButton.backgroundColor = isSelected ? UIColor.myAppWhite: UIColor.clear
-            calButton.layer.borderWidth = 1
-            calButton.layer.borderColor = UIColor.myAppGreen.cgColor
+            calButton.layer.borderColor = isSelected ? UIColor.myAppGreen.cgColor : UIColor.clear.cgColor
         }
     }
     
     override var isMultipleTouchEnabled: Bool {
         didSet {
-           // calButton.backgroundColor = isMultipleTouchEnabled ? UIColor.myAppWhite: UIColor.clear
-            calButton.layer.borderWidth = 1
-            calButton.layer.borderColor = UIColor.myAppGreen.cgColor
+            calButton.layer.borderColor = isMultipleTouchEnabled ? UIColor.myAppGreen.cgColor : UIColor.clear.cgColor
         }
     }
-    
 }

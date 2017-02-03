@@ -16,7 +16,7 @@ class PropertyViewController: UICollectionViewController, UICollectionViewDelega
         super.viewDidLoad()
         
         // Add smokeimage
-        addSmokeImageView()
+       // addSmokeImageView()
         
         // Apply style theme to app
         applyStyle()
@@ -79,7 +79,7 @@ class PropertyViewController: UICollectionViewController, UICollectionViewDelega
     
     // Setup collectionViewCell row number
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 1
     }
     
     // Setup collectionViewCell ResueIdentifier
@@ -127,6 +127,7 @@ class PropertyViewController: UICollectionViewController, UICollectionViewDelega
         }
     }
     
+    // Refresh each collectionview on scroll
     override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         self.collectionView?.invalidateIntrinsicContentSize()
     }
