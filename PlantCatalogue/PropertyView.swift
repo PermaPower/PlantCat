@@ -121,9 +121,9 @@ class PropertyViewController: UICollectionViewController, UICollectionViewDelega
     // Update background Image upon rotation
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
         if UIDevice.current.orientation.isLandscape {
-            addSmokeImageView()
+          //  addSmokeImageView()
         } else {
-            addSmokeImageView()
+         //   addSmokeImageView()
         }
     }
     
