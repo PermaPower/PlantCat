@@ -26,9 +26,9 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
         
         // Setup SubViews for ActivtyMonth
         setupViews()
-        
+		
     }
-    
+	
     // Month names
     let months: [String] = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
     
@@ -55,7 +55,6 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
         cv.allowsMultipleSelection = true
         cv.translatesAutoresizingMaskIntoConstraints = false
         cv.isScrollEnabled = false
-
         return cv
     }()
 
@@ -69,22 +68,12 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath) as! CalendarMonthButton
        
         //cell.backgroundColor = UIColor.blue
-        
+		
         cell.calButton.text = months[indexPath.item]
         
         return cell
     }
-    
-    // Divide the collectionview by 6 x 2
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let itemsPerRow: CGFloat = 7
-        let sectionInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
-        let availableWidth = frame.width  - paddingSpace
-        let widthPerItem = availableWidth / itemsPerRow
-        return CGSize(width: widthPerItem, height: (frame.height / 2) - 10 )
-    }
-    
+	
     // Reduce minimum line spacing between collectionview cells to zero
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 5
@@ -92,20 +81,24 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
-    
-    private func setupViews() {
-        
-        addSubview(activityMonthIcon)
-        addSubview(calendarCollectionView)
-        
-        addConstraintsWithFormat(format: "H:|[v0(30)]", views: activityMonthIcon)
-        addConstraintsWithFormat(format: "V:|-35-[v0(30)]", views: activityMonthIcon)
-        
-        addConstraintsWithFormat(format: "H:|-47-[v0]-|", views: calendarCollectionView)
-        addConstraintsWithFormat(format: "V:|-[v0]-|", views: calendarCollectionView)
-        
-    }
-    
+	
+	// Divide the collectionview by 6 x 2
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+		
+		let itemsPerRow: CGFloat = 7
+		let sectionInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+		let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+		let availableWidth = UIScreen.main.bounds.width  - paddingSpace
+		let widthPerItem = availableWidth / itemsPerRow
+		
+		collectionViewLayout.invalidateLayout()
+		collectionView.reloadData()
+
+		return CGSize(width: widthPerItem, height: (frame.height / 2) - 10 )
+		
+
+	}
+	
     // Reloads CollectionView upon Rotation
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
@@ -121,7 +114,20 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
     private func updateCollectionViewLayout(with size: CGSize) {
         self.calendarCollectionView.invalidateIntrinsicContentSize()
     }
-    
+	
+	private func setupViews() {
+		
+		addSubview(activityMonthIcon)
+		addSubview(calendarCollectionView)
+		
+		addConstraintsWithFormat(format: "H:|[v0(30)]", views: activityMonthIcon)
+		addConstraintsWithFormat(format: "V:|-35-[v0(30)]", views: activityMonthIcon)
+		
+		addConstraintsWithFormat(format: "H:|-47-[v0]-|", views: calendarCollectionView)
+		addConstraintsWithFormat(format: "V:|-[v0]-|", views: calendarCollectionView)
+		
+	}
+	
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

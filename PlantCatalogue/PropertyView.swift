@@ -25,9 +25,10 @@ class PropertyViewController: UICollectionViewController, UICollectionViewDelega
         navBarSetup()
         
         // Setup CollectionView
-        collectionViewSetup()
-    }
-    
+		collectionViewSetup()
+		
+	}
+	
     func navBarSetup() {
         navigationItem.title = "Home"        
     }
@@ -79,7 +80,7 @@ class PropertyViewController: UICollectionViewController, UICollectionViewDelega
     
     // Setup collectionViewCell row number
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return 50
     }
     
     // Setup collectionViewCell ResueIdentifier
@@ -101,41 +102,26 @@ class PropertyViewController: UICollectionViewController, UICollectionViewDelega
     
     // Setup collectionViewCell size
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.bounds.width, height: 200)
+        return CGSize(width: UIScreen.main.bounds.width, height: 200)
     }
-
-    
-    // Resize collectionViewCells upon rotation
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransition(to: size, with: coordinator)
-        updateCollectionViewLayout(with: size)
-    }
-    
-    private func updateCollectionViewLayout(with size: CGSize) {
-        if let layout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
-            layout.invalidateLayout()
-
-        }
-    }
+	
+	
 
     // Update background Image upon rotation
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
         if UIDevice.current.orientation.isLandscape {
           //  addSmokeImageView()
+			collectionView?.reloadData()
         } else {
          //   addSmokeImageView()
-        }
-    }
-    
-    // Refresh each collectionview on scroll
-    override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        self.collectionView?.invalidateIntrinsicContentSize()
-    }
-    
+			collectionView?.reloadData()
+		}
+	}
+
     // Handle errors
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+	
 }
