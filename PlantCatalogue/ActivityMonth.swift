@@ -84,19 +84,12 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
 	
 	// Divide the collectionview by 6 x 2
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-		
 		let itemsPerRow: CGFloat = 7
 		let sectionInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
 		let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
 		let availableWidth = UIScreen.main.bounds.width  - paddingSpace
 		let widthPerItem = availableWidth / itemsPerRow
-		
-		collectionViewLayout.invalidateLayout()
-		collectionView.reloadData()
-
 		return CGSize(width: widthPerItem, height: (frame.height / 2) - 10 )
-		
-
 	}
 	
     // Reloads CollectionView upon Rotation
