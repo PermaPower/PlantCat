@@ -5,16 +5,6 @@
 //  Created by David on 1/2/17.
 //  Copyright © 2017 David. All rights reserved.
 //
-
-import Foundation
-//
-//  ActivityMonth.swift
-//  PlantCat
-//
-//  Created by David on 1/2/17.
-//  Copyright © 2017 David. All rights reserved.
-//
-
 import UIKit
 
 class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -26,7 +16,6 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
         
         // Setup SubViews for ActivtyMonth
         setupViews()
-		
     }
 	
     // Month names
@@ -139,6 +128,10 @@ class ActivityMonth: UIView, UICollectionViewDataSource, UICollectionViewDelegat
     
     
 }
+
+/*********************************************/
+/* **** Calendar Month Buttons Labeled ***** */
+/*********************************************/
 
 class CalendarMonthButton: UICollectionViewCell {
     
